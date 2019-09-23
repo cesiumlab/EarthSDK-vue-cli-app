@@ -2,37 +2,38 @@
 
 ## 简介
 
-通过vue-cli创建项目，然后再基于EarthSDK创建地球。
-如果是大型项目，可以参考这种方式来构建程序。
+通过vue-cli创建项目，然后再基于EarthSDK创建地球。  
+如果是大型项目，可以参考这种方式来构建程序。  
+本项目，相当于在vue-cli的基础上做一些稍许修改，就可以加载EarthSDK了。  
 
 ![预览](./preview.jpg)
 
-## Project setup
+## 项目安装
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 调试模式
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 发布版本
 ```
 npm run build
 ```
 
-### Run your tests
+### 运行测试
 ```
 npm run test
 ```
 
-### Lints and fixes files
+### 语法检查
 ```
 npm run lint
 ```
 
-### Customize configuration
+### vue-cli的配置说明
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## 在vue-cli的基础上加入对EarthSDK的支持的方法说明
