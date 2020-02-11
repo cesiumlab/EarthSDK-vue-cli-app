@@ -6,6 +6,8 @@
 如果是大型项目，可以参考这种方式来构建程序。  
 本项目，相当于在vue-cli的基础上做一些稍许修改，就可以加载EarthSDK了。  
 
+注意：该项目可以配置成使用纯Cesium开发，看说明文档最下方。
+
 ![预览](./preview.jpg)
 
 ## 项目安装
@@ -151,3 +153,9 @@ XE.ready().then(startup);
 ```
 
 5. 再改改index.html文件中的css样式等
+
+## 将此项目配置成使用纯Cesium开发
+
+找到public/index.html文件，做如下修改，即可使用纯Cesium进行开发。
+
+![](README_ASSETS/czm.png)
