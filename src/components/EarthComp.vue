@@ -8,6 +8,40 @@
 </template>
 
 <script>
+
+function createEarth(comp) {
+  // 1.1.1 创建地球
+  var earth = new XE.Earth(comp.$refs.earthContainer);
+
+  // 1.1.2 添加默认地球影像
+  earth.sceneTree.root = {
+    children: [
+      {
+        czmObject: {
+          name: "默认离线影像",
+          xbsjType: "Imagery",
+          xbsjImageryProvider: {
+            createTileMapServiceImageryProvider: {
+              url: XE.HTML.cesiumDir + "Assets/Textures/NaturalEarthII",
+              fileExtension: "jpg"
+            },
+            type: "createTileMapServiceImageryProvider"
+          }
+        }
+      }
+    ]
+  };
+
+  comp._earth = earth;
+
+  // 仅为调试方便用
+  window.earth = earth;
+}
+
+function createCesium(comp) {
+  window.viewer = new Cesium.Viewer(comp.$refs.earthContainer);
+}
+
 // 1 创建Earth的vue组件
 var EarthComp = {
   data() {
@@ -19,32 +53,11 @@ var EarthComp = {
   },
   // 1.1 资源创建
   mounted() {
-    // 1.1.1 创建地球
-    var earth = new XE.Earth(this.$refs.earthContainer);
-
-    // 1.1.2 添加默认地球影像
-    earth.sceneTree.root = {
-      children: [
-        {
-          czmObject: {
-            name: "默认离线影像",
-            xbsjType: "Imagery",
-            xbsjImageryProvider: {
-              createTileMapServiceImageryProvider: {
-                url: XE.HTML.cesiumDir + "Assets/Textures/NaturalEarthII",
-                fileExtension: "jpg"
-              },
-              type: "createTileMapServiceImageryProvider"
-            }
-          }
-        }
-      ]
-    };
-
-    this._earth = earth;
-
-    // 仅为调试方便用
-    window.earth = earth;
+    if (typeof XE !== 'undefined') {
+      createEarth(this);
+    } else if (typeof Cesium !== 'undefined') {
+      createCesium(this);
+    }
   },
   // 1.2 资源销毁
   beforeDestroy() {
