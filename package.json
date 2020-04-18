@@ -11,7 +11,7 @@
     "cesium": "^1.66.0",
     "copy-webpack-plugin": "^5.0.4",
     "core-js": "^2.6.5",
-    "earthsdk": "^1.2.25",
+    "earthsdk": "^1.3.5",
     "vue": "^2.6.10"
   },
   "devDependencies": {
