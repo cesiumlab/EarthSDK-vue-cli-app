@@ -1,5 +1,8 @@
 # earthsdk-vue-cli-app
 
+## 注意
+**如果您使用的是vue3.0，请移步： https://github.com/cesiumlab/EarthSDK-vue3-cli-app**
+
 ## 简介
 
 通过vue-cli创建项目，然后再基于EarthSDK创建地球。  
